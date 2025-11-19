@@ -22,3 +22,18 @@ Fork-based collaborative CNN project for cross-dataset Cats vs Dogs classificati
    ```bash
    pip install -r requirements.txt
    ```
+
+## Next Steps for User 2 (as described in the assignment)
+
+- Fork this repository.
+- Clone the fork locally.
+- Test `models/model_v1.pth` on User 2's own dataset (Dogs vs Cats Redux).
+- Save test results as `results/test_v1_user2.json` in the fork.
+- Open a GitHub Issue in this base repository titled:
+
+  `Model v1 results on User 2 dataset`
+
+  and summarize:
+
+  - test accuracy on User 2 dataset
+  - any failure cases or observations
