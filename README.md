@@ -41,7 +41,19 @@ User 2 should:
    - test accuracy (if labels exist)
    - or prediction distribution
    - observations / failure cases
+---
+## User 2 (Model v2)
 
+- **Task:** Cat vs Dog classification
+- **Dataset (User 2 → Prajjval):** Dogs vs. Cats (Redux)  
+  https://www.kaggle.com/competitions/dogs-vs-cats-redux-kernels-edition/data
+### Implementation
+
+- Model code: `models/model_v2.py`
+- Training notebook: `notebooks/train_v2.ipynb`
+- Trained weights: `models/model_v2.pth`
+- Training metrics: `results/metrics_v2.json`
+- Grad-CAM samples: `results/gradcam/prajjval/`
 ---
 
 # Cross-Dataset Analysis
@@ -136,13 +148,28 @@ These steps improve cross-dataset performance significantly.
 
 Validation accuracy progression:
 
-| Epoch | Accuracy   |
-| ----- | ---------- |
-| 1     | 65.32%     |
-| 2     | 74.46%     |
-| 3     | 74.96%     |
-| 4     | 80.38%     |
-| 5     | **81.14%** |
+| Epoch |Accuracy (%) |
+|------|--------------|
+| 1  | 68.80 |
+| 2  | 73.74 |
+| 3  | 75.12 |
+| 4  | 79.32 |
+| 5  | 81.72 |
+| 6  | 80.28 |
+| 7  | 81.68 |
+| 8  | 81.18 |
+| 9  | 81.44 |
+| 10 | 68.06 |
+| 11 | 83.66 |
+| 12 | 80.80 |
+| 13 | 83.78 |
+| 14 | 84.50 |
+| 15 | **85.62** |
+| 16 | 84.82 |
+| 17 | 71.56 |
+| 18 | 80.00 |
+| 19 | 85.36 |
+| 20 | 80.12 |
 
 Observations:
 
