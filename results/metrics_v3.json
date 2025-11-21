@@ -1,0 +1,6 @@
+{
+    "model": "model_v3",
+    "type": "transfer_learning",
+    "accuracy": 0.47157686604053384,
+    "epochs": 3
+}
