@@ -1,0 +1,67 @@
+name: Validate repository structure
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Validate files and JSON
+        run: |
+          python - << "EOF"
+          import os, json, sys
+
+          required_files = [
+              "models/model_v1.py",
+              "models/model_v1.pth",
+              "models/model_v2.py",
+              "models/model_v2.pth",
+              "notebooks/train_v1.ipynb",
+              "notebooks/test_v1.ipynb",
+              "notebooks/test_v1_user2.ipynb",
+              "notebooks/train_v2.ipynb",
+              "notebooks/test_v2_user1.ipynb",
+              "results/metrics_v1.json",
+              "results/metrics_v2.json",
+              "results/test_v1_user2.json",
+              "results/test_v2_user1.json",
+              "report/report.md",
+          ]
+
+          missing = [f for f in required_files if not os.path.exists(f)]
+          if missing:
+              print("❌ Missing files:")
+              for m in missing:
+                  print("  -", m)
+              sys.exit(1)
+
+          json_files = [
+              "results/metrics_v1.json",
+              "results/metrics_v2.json",
+              "results/test_v1_user2.json",
+              "results/test_v2_user1.json",
+          ]
+
+          for path in json_files:
+              try:
+                  with open(path, "r") as f:
+                      json.load(f)
+              except Exception as e:
+                  print(f"❌ Invalid JSON in {path}: {e}")
+                  sys.exit(1)
+
+          print("✅ All required files present and JSON files are valid.")
+          EOF
