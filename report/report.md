@@ -22,9 +22,7 @@ The objective was to:
 1. Train a model separately on each dataset
 2. Test each model on the _other_ dataset
 3. Analyze performance drop (domain shift)
-4. Discuss dataset bias, robustness, and generalization
-
-The work follows a fork-based GitHub collaboration workflow as required.
+4. Discuss dataset bias, robustness and generalization
 
 ---
 
@@ -76,8 +74,6 @@ A deeper CNN:
 - Dropout regularization
 - Larger feature maps
 - Fully-connected classifier
-
-Much more robust to variation in real images.
 
 ---
 
@@ -142,7 +138,7 @@ But distribution of predictions over **12,500** images:
 - Dogs (class 1): **6854 (54.83%)**
 - Cats (class 0): **5646 (45.17%)**
 
-Model V1 shows weak generalization — domain shift observed.
+Model V1 shows weak generalization, domain shift observed.
 
 ---
 
@@ -203,29 +199,6 @@ Typical patterns observed:
 - Extremely close-up or far-away animals cause errors
 
 Grad-CAM confirmed that **background bias** is a major issue.
-
----
-
-## 12. Future Work
-
-1. **Transfer Learning**
-
-   - Use pretrained ResNet, MobileNet for better generalization
-
-2. **Better Augmentations**
-
-   - Random brightness/contrast
-   - Crops & rotations
-   - Color jitter
-
-3. **Joint Training**
-   Combine User1 + User2 datasets into a single model.
-
-4. **Domain Adaptation**
-   Align feature distributions between datasets.
-
-5. **Hard Example Mining**
-   Add misclassified images back into training.
 
 ---
 

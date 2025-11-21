@@ -44,7 +44,7 @@ User 2 should:
 
 ---
 
-# Part C – Cross-Dataset Analysis & Research Discussion
+# Cross-Dataset Analysis
 
 ## 1. Domain shift and dataset bias
 
@@ -120,7 +120,7 @@ This indicates overfitting and weaker domain robustness.
 
 ---
 
-## 5. Future Work (Research-Level Improvements)
+## 5. Future Work
 
 - Transfer learning (ResNet18, MobileNetV2)
 - Stronger augmentation strategies
@@ -150,10 +150,4 @@ Observations:
 - More robust to varied images
 - Outperforms Model V1 significantly
 
-Next step:
-
-- Compare both models in the final project report.
-
 ---
-
-# End of README
